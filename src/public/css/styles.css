@@ -1,2 +1,52 @@
-h1 {
-  color: red; }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#header .master-item {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center; }
+
+#header .navbar {
+  background-color: #2229; }
+  #header .navbar .nav-item {
+    margin-left: 10px; }
+
+#header .navbar-light a,
+#header .navbar-light .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold; }
+
+#homepage #hero .swiper-wrapper {
+  max-width: 1000px; }
+
+#homepage #hero .swiper-slide {
+  background-position: center;
+  padding-top: 50%;
+  opacity: 0.8; }
+  #homepage #hero .swiper-slide .swiper-content {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%); }
+
+#homepage #about-us .about-right img {
+  border-radius: 0.6rem; }
+
+#homepage #about-us ul {
+  list-style-type: none;
+  padding-left: 0; }
+  #homepage #about-us ul li::before {
+    content: "\f05d";
+    font-family: fontawesome;
+    color: #777;
+    padding-right: 10px;
+    font-weight: 100;
+    font-size: 18px; }
