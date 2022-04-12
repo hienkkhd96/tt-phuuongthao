@@ -1,1 +1,38 @@
-$red-color:red;
+$res_xs: "only screen and (min-width: 0px)";
+$res_sm: "only screen and (min-width: 576px)";
+$res_md: "only screen and (min-width: 768px)";
+$res_lg: "only screen and (min-width: 992px)";
+$res_xl: "only screen and (min-width: 1200px)";
+$res_xxl: "only screen and (min-width: 1400px)";
+
+$red-color: red;
+@mixin responsive_xs() {
+    @media #{$res_xs} {
+        @content;
+    }
+}
+@mixin responsive_sm() {
+    @media #{$res_sm} {
+        @content;
+    }
+}
+@mixin responsive_md() {
+    @media #{$res_md} {
+        @content;
+    }
+}
+@mixin responsive_lg() {
+    @media #{$res_lg} {
+        @content;
+    }
+}
+@mixin responsive_xl() {
+    @media #{$res_xl} {
+        @content;
+    }
+}
+@mixin responsive_xxl() {
+    @media #{$res_xxl} {
+        @content;
+    }
+}

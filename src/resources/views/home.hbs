@@ -1,18 +1,19 @@
-<div id="homepage">
+<div id="homepage" class="homepage">
   <div id="hero">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         {{#each sliders}}
-          <div
-            class="swiper-slide"
-            style="
-          background-image: url({{this.imageUrl}});
-        "
-          >
-            <div class="swiper-content ms-5 text-white op-1">
-              <h4 class="swiper-wel">{{this.wel}}</h4>
-              <h2 class="swiper-title">{{this.title}}</h2>
-              <p class="swiper-info">{{this.description}}</p>
+          <div class="swiper-slide">
+            <div
+              class="swiper-lazy hero-item"
+              data-background="{{this.imageUrl}}"
+            >
+              <div class="swiper-lazy-preloader"></div>
+              <div class="swiper-content ms-5 text-white op-1">
+                <h4 class="swiper-wel">{{this.wel}}</h4>
+                <h2 class="swiper-title">{{this.title}}</h2>
+                <p class="swiper-info">{{this.description}}</p>
+              </div>
             </div>
           </div>
         {{/each}}
@@ -49,24 +50,235 @@
       </div>
       <div class="about-right col-lg-6 col-12 flex-center">
         {{#each aboutImg}}
-          <img src="{{this.imageUrl}}" alt="{{this.title}}" />
+          <img class="img-fluid" src="{{this.imageUrl}}" alt="{{this.title}}" />
         {{/each}}
       </div>
     </div>
-    <div class="about-bottom container-xl mt-5">
-      <div class="btn-group row w-100" role="group" aria-label="First group">
+    <div class="about-bottom container-xl mt-4">
+      <div
+        class="btn-group flex-center w-100"
+        role="group"
+        aria-label="First group"
+      >
         {{#each aboutBottom}}
           <button
             type="button"
-            class="btn col-3 py-4 text-white flex-center"
+            class="btn py-4 text-white flex-center col-6 col-lg-3 mt-3"
             style="background-color:{{this.color}}"
           >
-            <i class="{{this.icon}} fs-4"></i>
-            <span class="fs-6 fw-bold ms-2">
+            <i class="{{this.icon}} fs-4 col-12 col-md-6"></i>
+            <span class="fs-6 fw-bold ms-2 text-max1 col-12 col-sm-6">
               {{this.description}}
             </span>
           </button>
         {{/each}}
+      </div>
+    </div>
+  </div>
+  <div id="contact-us" class="d-flex flex-wrap">
+    <div class="col-4 d-none d-lg-block contact-media">
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4 contact-list text-white">
+      <ul class="p-4">
+        {{#each contacts}}
+          <li class="d-flex justify-content-between align-items-center mb-4">
+            <i class="{{this.icon}}"></i>
+            <div class="ms-3">
+              <h6>{{this.title}}</h6>
+              <p>{{this.description}}</p>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4 contact-form p-4">
+      <h1>Liên hệ với chúng tôi</h1>
+      <form>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="full-name"
+            aria-describedby="nameHelp"
+            required
+            placeholder="Họ và tên"
+          />
+          <div id="nameHelp" class="form-text">Vui lòng nhập tên của bạn</div>
+        </div>
+        <div class="mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail1"
+            aria-describedby="emailHelp"
+            required
+            placeholder="Email"
+          />
+          <div id="emailHelp" class="form-text">Vui lòng nhập email của bạn</div>
+        </div>
+        <div class="mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="inputPhone"
+            aria-describedby="phoneHelp"
+            required
+          />
+          <div id="phoneHelp" class="form-text">Vui lòng nhập số điện thoại của
+            bạn</div>
+        </div>
+        <div class="mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="inputDate"
+            aria-describedby="dateHelp"
+            required
+          />
+          <div id="dateHelp" class="form-text">Vui lòng nhập năm sinh của bạn</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Gửi đi</button>
+      </form>
+    </div>
+  </div>
+  <div id="content" class="py-4">
+    <div class="container-xl">
+      <div class="content-head flex-center text-center">
+        <h4 class="col-12">Liên hệ với chúng tôi</h4>
+        <h1 class="col-12">Hãy chọn chúng tôi</h1>
+        <div class="progress col-12" style="height: 2px;">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 33.333%"
+          ></div>
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: 33.333%"
+          ></div>
+          <div
+            class="progress-bar bg-info"
+            role="progressbar"
+            style="width: 33.333%"
+          ></div>
+        </div>
+        <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc
+          trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng
+          như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500</p>
+      </div>
+      <div class="content-body mt-4">
+        <div class="row g-5 content-list">
+          {{#each contents}}
+            <div class="col-12 col-md-6 col-lg-4 content-item">
+              <i class="{{this.icon}} fs-2"></i>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{this.title}}</h5>
+                  <p class="card-text">{{this.description}}</p>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="library" class="py-5">
+    <div
+      class="content-head flex-center text-center text-white container-fluid"
+    >
+      <h4 class="col-12">Thư viện của chúng tôi</h4>
+      <h1 class="col-12">Hãy chọn chúng tôi</h1>
+      <div class="progress col-12 mt-2" style="height: 2px;">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          style="width: 33.333%"
+        ></div>
+        <div
+          class="progress-bar bg-success"
+          role="progressbar"
+          style="width: 33.333%"
+        ></div>
+        <div
+          class="progress-bar bg-info"
+          role="progressbar"
+          style="width: 33.333%"
+        ></div>
+      </div>
+    </div>
+    <div class="swiper mySwiper2 mt-5">
+      <div class="swiper-wrapper">
+        {{#each library}}
+          <div class="swiper-slide flex-center">
+            <div class="swiper-lazy-preloader"></div>
+            <img
+              class="img-thumbnail swiper-lazy w-100"
+              data-src="{{this.imageUrl}}"
+              alt=""
+              style="height: auto"
+            />
+          </div>
+        {{/each}}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <div class="flex-center">
+      <a class="nav-link text-white mt-5" href="/libraries">Xem thư viện của
+        chúng tôi
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+  <div id="mentor">
+    <div class="mentor-content ps-4">
+      <div class="">
+        <div class="swiper mySwiper3">
+          <div class="swiper-wrapper">
+            {{#each mentor}}
+              <div class="swiper-slide mentor-slide d-flex flex-wrap">
+                <div
+                  class="head col-12 col-md-6 d-flex justify-content-center flex-column"
+                >
+                  <div class="content-head">
+                    <h5 class="col-12">Chúng tôi là ai</h5>
+                    <h2 class="col-12">Giảng viên</h2>
+                    <div class="progress col-12" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-primary"
+                        role="progressbar"
+                        style="width: 33.333%"
+                      ></div>
+                      <div
+                        class="progress-bar bg-secondary"
+                        role="progressbar"
+                        style="width: 66.667%"
+                      >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mentor-info mt-3">
+                    <h4 class="fst-italic">{{this.name}}</h4>
+                    <h5>{{this.position}}</h5>
+                    <p class="pe-5">{{this.description}}</p>
+                  </div>
+                </div>
+                <div class="mentor-media col-12 col-md-6">
+                  <img
+                    class="swiper-lazy"
+                    data-src="{{this.imageUrl}}"
+                    alt=""
+                  />
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
     </div>
   </div>
