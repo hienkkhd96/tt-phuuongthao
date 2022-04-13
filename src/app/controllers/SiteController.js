@@ -3,9 +3,12 @@ const AboutImg = require("../models/About/AboutImg");
 const AboutUs = require("../models/About/AboutUs");
 const Contacts = require("../models/Contacts");
 const Contents = require("../models/Contents");
+const Courses = require("../models/Courses");
 const Library = require("../models/Library");
 const Mentor = require("../models/Mentor");
 const Sliders = require("../models/Slider");
+const Info = require("../models/Info/Info");
+const Statistical = require("../models/Statistical");
 const toObject = require("../util/ToObject");
 
 class SiteControllers {
@@ -19,6 +22,9 @@ class SiteControllers {
     const contents = () => Contents.find({});
     const library = () => Library.find({});
     const mentor = () => Mentor.find({});
+    const statistical = () => Statistical.find({});
+    const courses = () => Courses.find({});
+    const info = () => Info.find({});
     Promise.all([
       aboutUs(),
       sliders(),
@@ -28,6 +34,9 @@ class SiteControllers {
       contents(),
       library(),
       mentor(),
+      statistical(),
+      courses(),
+      info(),
     ])
       .then((response) => {
         return {
@@ -39,6 +48,9 @@ class SiteControllers {
           contents: toObject.multilObject(response[5]),
           library: toObject.multilObject(response[6]),
           mentor: toObject.multilObject(response[7]),
+          statistical: toObject.multilObject(response[8]),
+          courses: toObject.multilObject(response[9]),
+          info: toObject.multilObject(response[10]),
         };
       })
       .then((response) => {
