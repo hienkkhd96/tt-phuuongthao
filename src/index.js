@@ -2,7 +2,6 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const path = require("path");
 const morgan = require("morgan");
-const serverless = require("serverless-http");
 
 const app = express();
 const port = 3000;
@@ -27,4 +26,3 @@ route(app);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-module.exports.handler = serverless(app);
