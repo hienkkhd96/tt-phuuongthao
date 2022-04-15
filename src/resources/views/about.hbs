@@ -1,0 +1,57 @@
+<div id="aboutpage" class="aboutpage">
+  <div id="section-first" class="py-4">
+    <div class="container">
+      <div class="head flex-center text-center flex-column">
+        <h4>Chúng Tôi Là Ai</h4>
+        <h2>Hãy Chọn Chúng Tôi</h2>
+        <div class="progress w-100" style="height: 2px;">
+          <div
+            class="progress-bar bg-info"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="15"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: 50%"
+            aria-valuenow="30"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+          <div
+            class="progress-bar bg-info"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="20"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <p>
+          Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc
+          trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng
+          như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500
+        </p>
+      </div>
+      <div
+        id="counter-about"
+        class="counter backgroundFix"
+        {{#each this.aboutImg}}
+        style="background-image:url({{this.backgroundUrl}})"
+        {{/each}}
+      >
+        <ul class="counter-list d-flex flex-wrap">
+          {{#each this.aboutList}}
+            <li class="counter-item col-6 mt-4">
+              <h3 class="counter-value" data-count="{{this.counter}}">{{this.counter}}</h3>
+              <p>{{this.title}}</p>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

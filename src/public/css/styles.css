@@ -7,6 +7,11 @@
 body {
   overflow-x: hidden; }
 
+.backgroundFix {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -171,12 +176,60 @@ ul {
         color: #777;
         font-size: 16px; }
 
+#aboutpage #section-first .counter ul {
+  padding: 0 18px; }
+  #aboutpage #section-first .counter ul li {
+    position: relative; }
+
+#aboutpage #section-first .counter ul li:nth-child(odd) {
+  text-align: left; }
+
+#aboutpage #section-first .counter ul li:nth-child(odd)::before {
+  background-color: #4396e6;
+  bottom: 10px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  left: 0;
+  width: 20px; }
+
+#aboutpage #section-first .counter ul li:nth-child(odd)::after {
+  background-color: #222222;
+  bottom: 10px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  left: 25px;
+  width: 20px; }
+
+#aboutpage #section-first .counter ul li:nth-child(even) {
+  text-align: right; }
+
+#aboutpage #section-first .counter ul li:nth-child(even)::before {
+  background-color: #4396e6;
+  bottom: 10px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  right: 0;
+  width: 20px; }
+
+#aboutpage #section-first .counter ul li:nth-child(even)::after {
+  background-color: #222222;
+  bottom: 10px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  right: 25px;
+  width: 20px; }
+
 #footer {
   background-color: #222;
   color: #fff; }
 
 @media only screen and (min-width: 0px) {
-  .homepage {
+  .homepage,
+  .aboutpage {
     margin-top: 56px; }
   #statistical {
     padding-left: 32px;
@@ -206,7 +259,8 @@ ul {
     width: calc(100% / 2 - 48px); } }
 
 @media only screen and (min-width: 992px) {
-  .homepage {
+  .homepage,
+  .aboutpage {
     margin-top: 172px; }
   #statistical .statistical-item {
     width: calc(100% / 4 - 32px); }

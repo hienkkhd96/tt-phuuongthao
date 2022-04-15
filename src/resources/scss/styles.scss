@@ -8,6 +8,11 @@
 body {
     overflow-x: hidden;
 }
+.backgroundFix {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .flex-center {
     display: flex;
@@ -216,6 +221,61 @@ ul {
         }
     }
 }
+#aboutpage {
+    #section-first {
+        .counter {
+            ul {
+                padding: 0 18px;
+                li {
+                    position: relative;
+                }
+            }
+
+            ul li:nth-child(odd) {
+                text-align: left;
+            }
+            ul li:nth-child(odd)::before {
+                background-color: #4396e6;
+                bottom: 10px;
+                content: "";
+                height: 2px;
+                position: absolute;
+                left: 0;
+                width: 20px;
+            }
+            ul li:nth-child(odd)::after {
+                background-color: #222222;
+                bottom: 10px;
+                content: "";
+                height: 2px;
+                position: absolute;
+                left: 25px;
+                width: 20px;
+            }
+            ul li:nth-child(even) {
+                text-align: right;
+            }
+            ul li:nth-child(even)::before {
+                background-color: #4396e6;
+                bottom: 10px;
+                content: "";
+                height: 2px;
+                position: absolute;
+                right: 0;
+                width: 20px;
+            }
+            ul li:nth-child(even)::after {
+                background-color: #222222;
+                bottom: 10px;
+                content: "";
+                height: 2px;
+                position: absolute;
+                right: 25px;
+                width: 20px;
+            }
+        }
+    }
+}
 #footer {
     background-color: #222;
     color: #fff;
@@ -223,7 +283,8 @@ ul {
 
 // Responsive
 @include responsive_xs {
-    .homepage {
+    .homepage,
+    .aboutpage {
         margin-top: 56px;
     }
     #statistical {
@@ -275,7 +336,8 @@ ul {
     }
 }
 @include responsive_lg {
-    .homepage {
+    .homepage,
+    .aboutpage {
         margin-top: 172px;
     }
     #statistical {
