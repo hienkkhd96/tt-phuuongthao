@@ -275,6 +275,46 @@ ul {
             }
         }
     }
+    #section-second {
+        background-color: #222222;
+        .about-gifts {
+            .nav-link {
+                background: #393939;
+                border-top: 1px solid #000;
+                border-bottom: 1px solid #000;
+                color: #fff;
+                ::before {
+                    background-color: #fff;
+                    bottom: 50%;
+                    transform: translateY(50%);
+                    content: "";
+                    height: 2px;
+                    position: absolute;
+                    left: 0px;
+                    width: 10px;
+                }
+                ::after {
+                    background-color: #4396e6;
+                    bottom: 50%;
+                    transform: translateY(50%);
+                    content: "";
+                    height: 2px;
+                    position: absolute;
+                    left: 15px;
+                    width: 10px;
+                }
+            }
+            .nav-link.active {
+                background: #005dbe;
+                ::before {
+                    display: none;
+                }
+                ::after {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 #footer {
     background-color: #222;
@@ -286,6 +326,15 @@ ul {
     .homepage,
     .aboutpage {
         margin-top: 56px;
+        .about-gifts .nav-link {
+            background: #005dbe;
+            ::before {
+                display: none;
+            }
+            ::after {
+                display: none;
+            }
+        }
     }
     #statistical {
         padding-left: 32px;
@@ -339,6 +388,15 @@ ul {
     .homepage,
     .aboutpage {
         margin-top: 172px;
+        .about-gifts .nav-link {
+            background: #005dbe;
+            ::before {
+                display: block;
+            }
+            ::after {
+                display: block;
+            }
+        }
     }
     #statistical {
         .statistical-item {

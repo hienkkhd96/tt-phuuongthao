@@ -5,30 +5,12 @@
         <h4>Chúng Tôi Là Ai</h4>
         <h2>Hãy Chọn Chúng Tôi</h2>
         <div class="progress w-100" style="height: 2px;">
-          <div
-            class="progress-bar bg-info"
-            role="progressbar"
-            style="width: 25%"
-            aria-valuenow="15"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
-          <div
-            class="progress-bar bg-success"
-            role="progressbar"
-            style="width: 50%"
-            aria-valuenow="30"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
-          <div
-            class="progress-bar bg-info"
-            role="progressbar"
-            style="width: 25%"
-            aria-valuenow="20"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
+          <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0"
+            aria-valuemax="100"></div>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="30"
+            aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="20" aria-valuemin="0"
+            aria-valuemax="100"></div>
         </div>
         <p>
           Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc
@@ -36,21 +18,91 @@
           như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500
         </p>
       </div>
-      <div
-        id="counter-about"
-        class="counter backgroundFix"
-        {{#each this.aboutImg}}
-        style="background-image:url({{this.backgroundUrl}})"
-        {{/each}}
-      >
+      <div id="counter-about" class="counter backgroundFix" {{#each this.aboutImg}}
+        style="background-image:url({{this.backgroundUrl}})" {{/each}}>
         <ul class="counter-list d-flex flex-wrap">
           {{#each this.aboutList}}
-            <li class="counter-item col-6 mt-4">
-              <h3 class="counter-value" data-count="{{this.counter}}">{{this.counter}}</h3>
-              <p>{{this.title}}</p>
-            </li>
+          <li class="counter-item col-6 mt-4">
+            <h3 class="counter-value" data-count="{{this.counter}}">{{this.counter}}</h3>
+            <p>{{this.title}}</p>
+          </li>
           {{/each}}
         </ul>
+      </div>
+    </div>
+  </div>
+  <div id="section-second" class="flex-center py-4">
+    <div class="about-media col-12 col-lg-6">
+      <img class="img-fluid"
+        src="http://mauweb.monamedia.net/truongdaylaixethongnhat/wp-content/uploads/2019/10/fullwidth-1.jpg" alt="">
+    </div>
+    <div class="about-gifts col-12 col-lg-6 p-3">
+      <div class="d-flex align-items-center flex-wrap">
+        <div class="nav flex-column nav-pills col-3 col-lg-4" id="v-pills-tab" role="tablist"
+          aria-orientation="vertical">
+          {{#each this.aboutGifts}}
+          <button class="nav-link {{this.active}} position-relative flex-center " id="v-pills-{{this.tab}}-tab"
+            data-bs-toggle="pill" data-bs-target="#v-pills-{{this.tab}}" type="button" role="tab"
+            aria-controls="v-pills-{{this.tab}}" aria-selected="true">
+            <p class="py-2 mb-0">
+              {{this.title}}
+            </p>
+            <div class="line-bottom mt-2"></div>
+          </button>
+          {{/each}}
+        </div>
+        <div class="tab-content col-9 col-lg-8 text-white text-center p-4" id="v-pills-tabContent">
+          {{#each this.aboutGifts}}
+          <div class="tab-pane fade show {{this.active}}" id="v-pills-{{this.tab}}" role="tabpanel"
+            aria-labelledby="v-pills-{{this.tab}}-tab">
+            <i class="{{this.icon}} fs-1"></i>
+            <h3>Quà tặng khóa học: {{this.gift}}</h3>
+            <p>{{this.description}}</p>
+            <button class="btn btn-outline-info">Chọn ngay</button>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="section-third" class="py-5">
+    <div class="container-xl">
+      <div class="head flex-center text-center flex-column">
+        <h4>Chúng Tôi Là Ai</h4>
+        <h2>Hãy Chọn Chúng Tôi</h2>
+        <div class="progress w-100" style="height: 2px;">
+          <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0"
+            aria-valuemax="100"></div>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="30"
+            aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="20" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        </div>
+        <p>
+          Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc
+          trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng
+          như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500
+        </p>
+      </div>
+      <div class="d-flex">
+        <div class="third-media d-none d-lg-block">
+          {{#each this.aboutImg}}
+          <img src="{{this.driverUrl}}" alt="">
+          {{/each}}
+        </div>
+        <div class="third-list p-4">
+          <ul class="flex-center">
+            {{#each this.aboutList2}}
+            <li class="col-12 col-sm-6 p-1 p-sm-4 border bg-primary text-white">
+              <div class="flex-center mb-3">
+                <i class="{{this.icon}} col-1 ps-1 fs-3"></i>
+                <h5 class="col-11 mb-0 ps-4">{{this.title}}</h5>
+              </div>
+              <p>{{this.description}}</p>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
       </div>
     </div>
   </div>

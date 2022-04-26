@@ -223,6 +223,38 @@ ul {
   right: 25px;
   width: 20px; }
 
+#aboutpage #section-second {
+  background-color: #222222; }
+  #aboutpage #section-second .about-gifts .nav-link {
+    background: #393939;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    color: #fff; }
+    #aboutpage #section-second .about-gifts .nav-link ::before {
+      background-color: #fff;
+      bottom: 50%;
+      transform: translateY(50%);
+      content: "";
+      height: 2px;
+      position: absolute;
+      left: 0px;
+      width: 10px; }
+    #aboutpage #section-second .about-gifts .nav-link ::after {
+      background-color: #4396e6;
+      bottom: 50%;
+      transform: translateY(50%);
+      content: "";
+      height: 2px;
+      position: absolute;
+      left: 15px;
+      width: 10px; }
+  #aboutpage #section-second .about-gifts .nav-link.active {
+    background: #005dbe; }
+    #aboutpage #section-second .about-gifts .nav-link.active ::before {
+      display: none; }
+    #aboutpage #section-second .about-gifts .nav-link.active ::after {
+      display: none; }
+
 #footer {
   background-color: #222;
   color: #fff; }
@@ -231,6 +263,15 @@ ul {
   .homepage,
   .aboutpage {
     margin-top: 56px; }
+    .homepage .about-gifts .nav-link,
+    .aboutpage .about-gifts .nav-link {
+      background: #005dbe; }
+      .homepage .about-gifts .nav-link ::before,
+      .aboutpage .about-gifts .nav-link ::before {
+        display: none; }
+      .homepage .about-gifts .nav-link ::after,
+      .aboutpage .about-gifts .nav-link ::after {
+        display: none; }
   #statistical {
     padding-left: 32px;
     padding-right: 32px; }
@@ -262,6 +303,15 @@ ul {
   .homepage,
   .aboutpage {
     margin-top: 172px; }
+    .homepage .about-gifts .nav-link,
+    .aboutpage .about-gifts .nav-link {
+      background: #005dbe; }
+      .homepage .about-gifts .nav-link ::before,
+      .aboutpage .about-gifts .nav-link ::before {
+        display: block; }
+      .homepage .about-gifts .nav-link ::after,
+      .aboutpage .about-gifts .nav-link ::after {
+        display: block; }
   #statistical .statistical-item {
     width: calc(100% / 4 - 32px); }
   #courses .content .courses-item {
